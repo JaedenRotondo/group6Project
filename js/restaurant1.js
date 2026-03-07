@@ -22,6 +22,7 @@ document.querySelectorAll(".quantity-control").forEach((control) => {
 
 
 function checkoutRestaurant1() {
+    menu_list = []
     let hasItems = false
     document.querySelectorAll(".quantity-control").forEach((control, index) => {
         const menuItemName = control.querySelector(".menu-item-name").textContent
