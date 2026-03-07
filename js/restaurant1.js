@@ -1,3 +1,5 @@
+let menu_list = []
+
 document.querySelectorAll(".quantity-control").forEach((control) => {
     const minusBtn = control.querySelector(".minus-btn");
     const plusBtn = control.querySelector(".plus-btn");
@@ -20,8 +22,14 @@ document.querySelectorAll(".quantity-control").forEach((control) => {
 
 
 function checkoutRestaurant1() {
-    document.querySelector(".quantity-control").forEach((control) => {
+    document.querySelectorAll(".quantity-control").forEach((control, index) => {
+        const menuItemName = control.querySelector(".menu-item-name").textContent
+        const menuItemPrice = control.querySelector(".menu-item-price").textContent.substring(1)
         const countOfElement = control.querySelector(".count").textContent
-        console.log(countOfElement)
+        menu_list.push({ "name": menuItemName, "price": menuItemPrice, "quantity": countOfElement })
     })
+    localStorage.setItem("menu_items", JSON.stringify(menu_list))
+    console.log(localStorage)
+    window.location.href = "checkoutRest1.html"
+
 }
