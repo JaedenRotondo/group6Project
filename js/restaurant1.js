@@ -17,3 +17,11 @@ document.querySelectorAll(".quantity-control").forEach((control) => {
         countEl.textContent = count;
     });
 });
+
+
+function checkoutRestaurant1() {
+    document.querySelector(".quantity-control").forEach((control) => {
+        const countOfElement = control.querySelector(".count").textContent
+        console.log(countOfElement)
+    })
+}
